@@ -1,73 +1,42 @@
 import React from 'react';
 import './Services.css';
-import socialmedia from "../images/socialmedia.jpeg";
-import music from "../images/music.jpeg";
-import web from "../images/web.jpeg";
-import model from "../images/model.jpeg";
-import Phoneservices from './Phoneservices';
+import { BiAperture } from "react-icons/bi";
+import { FaUsers } from "react-icons/fa";
+import { FcPortraitMode } from "react-icons/fc";
+import { SiWebrtc } from "react-icons/si";
+import { BsFillCameraFill } from "react-icons/bs";
+import { GiMusicSpell, GiPayMoney } from "react-icons/gi";
+import { MdSocialDistance } from "react-icons/md";
 
 
-//media services, forex, web design, social media, music production, modelling agency
-
-function About()
-{
-    return ( <React.Fragment>   
-        <div>
-        <Phoneservices />
-    </div>    
+const Services = () => {
+  return (
+    <div className='icon-container'>
     
-                    <div className="slider">
-                        <div className="slides">
+    <div className='container1'>
+      <BiAperture id='bi' />
+      <h6>MultiMedia Services</h6>
+      <FaUsers id="fa" />
+      <h6>Branding</h6>
+     <FcPortraitMode id="fc" />
+      <h6>Modeling</h6>
+      <SiWebrtc id="si" />
+      <h6>Web Development</h6>
+      
+      </div>
+      
+      <div className='container2'>
+      <BsFillCameraFill id="bs" />
+      <h6>Photography</h6>
+      <GiMusicSpell id="gig" />
+      <h6>Sound Engineering</h6>
+      <GiPayMoney id="gip" />
+      <h6>Forex Mgt</h6>
+      <MdSocialDistance id='md' />
+      <h6>Social Media Mgt</h6>
+      </div>
+    </div>
+  )
+}
 
-                            <input type="radio" className="radio-btn" id="radio1"></input>
-                            <input type="radio" className="radio-btn" id="radio2"></input>
-                            <input type="radio" className="radio-btn" id="radio3"></input>
-                            <input type="radio" className="radio-btn" id="radio4"></input>
-                        
-                        <div className="slide first">
-                            <img src={web} alt=""></img>
-                        </div>
-                        <div className="slide">
-                            <img src={socialmedia} alt=""></img>
-                        </div>
-                        <div className="slide">
-                            <img src={music} alt=""></img>
-                        </div>
-                        <div className="slide">
-                            <img src={model} alt=""></img>
-                        </div>
-                        
-                        <div className="navigation-auto">
-                            <div className="auto-btn1"></div>
-                            <div className="auto-btn2"></div>
-                            <div className="auto-btn3"></div>
-                            <div className="auto-btn4"></div>
-                        </div>
-                      
-                      </div>
-
-                        <div className="navigation-manual">
-                        <label for="radio1" className="manual-btn"></label>
-                        <label for="radio2" className="manual-btn"></label>
-                        <label for="radio3" className="manual-btn"></label>
-                        <label for="radio4" className="manual-btn"></label>
-                        </div>
-              
-
-                        </div>
-                       
-                        </React.Fragment>        
-
-     );
-    }
-
-export default About;
-
-var counter = 1;
-setInterval(function(){
-    document.getElementById('radio' + counter).checked = true;
-    counter ++;
-    if(counter > 4){
-        counter = 1;
-    }
-}, 3000);
+export default Services
