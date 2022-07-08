@@ -6,7 +6,7 @@ import model from "../images/model.jpeg";
 import './Services.css';
 
 function Phoneservices() {
-    return (<div>
+    return (<div className='bud'>
                         <div >
                             <img src={web} alt="" className='smallpix'></img>
                         </div>

@@ -1,26 +1,25 @@
-import { useNavigate } from 'react-router';
+import React from 'react';
 import camera from "../images/camera.png";
-import './Homepage.css';
+import './Hero.css';
+import { useNavigate } from 'react-router';
 import Typewriter from "typewriter-effect";
 import {Typography} from "@material-ui/core";
 
 
+function Hero() {
 
-const Homepage = () => {
     let navigate = useNavigate();
-    
-    
-    
-    return (    
-             <div className='grid'>
-                  
-                    <div className="text-box">
-                        <h1 className='Typo'>
+
+    return (
+        <div>
+        <div class="container h-100">
+          <div class="row align-items-center h-100">
+            <div class="col-lg-6 py-3 wow fadeInUp" id="text-box">
+            <Typography className='Typo'>
                           Welcome to <span className='Great'> 
                           <Typewriter onInit={(typewriter) => {   typewriter.typeString(  "  the Future").pauseFor(2000).deleteAll().typeString( " Possibilities").deleteAll().typeString( " Greatness").start();}} /> 
                           </span>
-                        </h1>
-
+                        </Typography>
                         <p className="everything">
                             Everything is possible with optimummedias
                         </p>
@@ -29,16 +28,19 @@ const Homepage = () => {
                         
                         <a href onClick={() => {navigate("/Services");}}className="btn">Services</a>
                         </div>
-                    </div>
-                    <img src={camera} className="user-img" alt="hey"  />
-
-                    
-            </div>
-                   
         
+            </div>
+            <div class="col-lg-6 py-3 wow zoomIn">
+              <div class="img-place" id="user-img">
+                <img src={camera} alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-     );
+
+      );
 }
 
-export default Homepage;
-
+export default Hero;
